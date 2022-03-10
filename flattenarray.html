@@ -1,0 +1,28 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        var arr = [[1],
+        [2],
+        [3, 4],
+        [5]];
+        var res = new Array();
+        for (let u = 0; u < arr.length; u++) {
+            document.write(arr[u] + "<br>");
+        }
+        document.write("AFTER REMOVIING NESTING" + "<br>");
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                res.push(arr[i][j]);
+            }
+        }
+        for (let u = 0; u < res.length; u++) {
+            document.write(res[u] + "<br>");
+        }
+    </script>
+</body>
+
+</html>

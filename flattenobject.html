@@ -1,0 +1,45 @@
+<html>
+
+<head>
+</head>
+
+<body>
+  <script>
+
+    let ob = {
+      columnDataRegex: "([\\w& \\-\\\\'\\/\\,]|[^\\x00-\\x7F])+",
+      columnDataWhiteListName: "Ethnicity",
+      columnNameRegex: "\\b([a-zA-Z]{0,20}[\\_\\ ])?(Ethnicity)\\b",
+      confidenceFactorConfig: {
+        expStrength: 0.8,
+        expressionId: 260
+      },
+      dgValidationFunction: {
+        validationFunctionName: "ValidateEthnicity"
+      },
+
+      updatets: 1644899130360
+    };
+
+    const flatten = (ob) => {
+      let result = {};
+      for (const i in ob) {
+        if ((typeof ob[i]) === 'object' && !Array.isArray(ob[i])) {
+          const temp = flatten(ob[i]);
+          for (const j in temp) {
+            result[i + '_' + j] = temp[j];
+          }
+        }
+
+        else {
+          result[i] = ob[i];
+        }
+      }
+      return result;
+    };
+    var temp=flatten(ob);
+    console.log(temp);
+  </script>
+</body>
+
+</html>

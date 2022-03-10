@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>CALLBACK</title>
+</head>
+
+<body>
+    <script>
+        var total=[];
+        function print()
+        {
+            for(let i =0;i<total.length;i++)
+            {
+                document.write("ELEMENT NUMBER  "+(i+1)+"<br>");
+                document.write("ID:  "+total[i].id+"<br>");
+                document.write("PARENT_ID:  "+total[i].parent_id+"<br>");
+                document.write("CHILD ID:  "+total[i].child.id+"<br>");
+                document.write("CHILD PARENT_ID:  "+total[i].child.parent_id+"<br>");
+                document.write("<br>");
+            }
+        }
+        function check(parent,print)
+        {
+            for(let i=0;i<parent.length-1;i++)
+            {
+                let count=0;
+                for(let j=i+1;j<parent.length;j++)
+                {
+                    if(parent[i].id==parent[j].parent_id)
+                    {
+                        count++;
+                        let temp=
+                        {
+                            "id":parent[i].id,
+                            "parent id":parent[i].parent_id,
+                            "child":parent[j]
+                        }
+                        total.push(temp);
+                    }
+                    
+                }
+                if(count==0)
+                {
+                    let temp=
+                        {
+                            "id":parent[i].id,
+                            "parent id":parent[i].parent_id,
+                            "child":"null"
+                        }
+                        total.push(temp);
+                }
+            }
+            print();
+        }
+        
+        var parents =
+            [
+                {
+                    "id": 1,
+                    "parent_id": "null"
+                }, 
+                {
+                    "id": 2,
+                    "parent_id": "null"
+                }, 
+                {
+                    "id": 3,
+                    "parent_id": 1
+                }
+            ]
+            check(parents,print);
+
+     console.log(total);
+    </script>
+
+</body>
+
+</html>
