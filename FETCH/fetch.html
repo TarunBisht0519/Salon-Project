@@ -1,17 +1,21 @@
 <html>
-    <head>
-        <title>
-            FETCHING DATA FROM PAYROLL PROGRAMME
-        </title>
-    </head>
-    <body>
-        <script>
-            fetch('https://api.github.com/')
-            .then(response => response.text()) 
-            .then(textString => {
-            console.log(textString);
-        });
-        
-        </script>
-    </body>
+
+<head>
+    <title>
+        FETCHING DATA FROM PAYROLL PROGRAMME
+    </title>
+</head>
+
+<body>
+    <script>
+     
+        async function fetching() {
+            const response = await fetch('https://api.github.com/');
+            
+            console.log(response);
+        }
+        fetching();
+    </script>
+</body>
+
 </html>
