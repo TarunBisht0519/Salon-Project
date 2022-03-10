@@ -8,13 +8,22 @@
 
 <body>
     <script>
-     
-        async function fetching() {
-            const response = await fetch('https://api.github.com/');
-            
-            console.log(response);
+    var a={};
+    async function fun() {
+        
+            await fetch('https://api.github.com')
+                .then(res => res.json())
+                .then(data => {
+                    a = data;
+                    
+                })
+
+            console.log("Response => ", a);
         }
-        fetching();
+        fun();
+        for (const [key, value] of Object.entries(a)) {
+        console.log(`${key}: ${value}`);
+}
     </script>
 </body>
 
