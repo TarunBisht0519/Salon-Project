@@ -1,0 +1,22 @@
+<html>
+    <head><title>POLYFILLING</title></head>
+    <body>
+        <script>
+            if(!iseven)
+            {
+                function iseven(number)
+                {
+                    if(number %2==0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            document.write(iseven(45));
+        </script>
+    </body>
+</html>
