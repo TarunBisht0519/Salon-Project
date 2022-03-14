@@ -1,0 +1,188 @@
+<html>
+
+<head>
+    <title>
+        LOGIN
+    </title>
+    <style>
+        #l1 {
+            background-color: azure;
+        }
+        #a1 {
+            border: 1px solid back;
+            background-position: 100px 80px;
+            background-repeat: no-repeat;
+        }
+        #f1 {
+
+            width: max-content;
+            background-color: aliceblue;
+            margin-top: auto;
+            
+        }
+
+        #b1 {
+            background-color: cornflowerblue;
+            margin-right: 15px;
+        }
+
+        #b2 {
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body id=l1>
+    <center>
+        <div id="a1">
+            <img src="https://mma.prnewswire.com/media/1470446/PKWARE_Logo.jpg?p=facebook" alt="PKWARE PROTECT"
+                width="300" height="200">
+        </div>
+    </center>
+    <center>
+        <marquee>The world’s accomplishments depend on data security. PK Protect is the most comprehensive enterprise data protection suite ever created, allowing businesses to eliminate security gaps, take control of sensitive data and meet the most stringent data compliance requirements.</marquee>
+        <br>
+        <br>
+        <div id="f1">
+            <form id="fm1">
+
+                <table>
+                    <tr>
+                        <td>
+                            <lable>ENTER FIRST NAME</lable>
+                        </td>
+                        <td><input type="text" id="fname" name="fname"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <lable>ENTER LAST NAME</lable>
+                        </td>
+                        <td><input type="text" id="lname" name="lname"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <lable>ENTER AGE </lable>
+                        </td>
+                        <td><input type="text" id="age" name="age"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <lable>ENTER NUMBER</lable>
+                        </td>
+                        <td><input type="text" id="number" name="number"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <lable>ENTER MAIL</lable>
+                        </td>
+                        <td><input type="text" id="mail" name="mail"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <lable>ENTER PASSWORD</lable>
+                        </td>
+                        <td><input type="text" id="pass" name="pass"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <lable>RE-ENTER PASSWORD</lable>
+                        </td>
+                        <td><input type="text" id="pass2" name="pass2"></td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+
+        <br>
+        <input type="button" id="b1" onclick="register(check1,check2,check3)" value="REGISTER">
+        <input type="button" id="b2" onclick="take()" value="ALREADY REGISTERED">
+    </center>
+</body>
+<script>
+    const arr = [{}];
+    function check3()
+    {
+        let p1="";
+        let p2="";
+        let s1=document.getElementById("pass").value;
+        let s2=document.getElementById("pass2").value;
+        p1=p1+s1;
+        p2=p2+s2;
+        if(p1!=p2)
+        {
+            alert("PASSWORD ENTERED NOT MATCHING");
+            location.reload();
+            return 0;
+        }
+        else{
+            return 1;
+        }
+    }
+    function check2() {
+        var s1 = document.getElementById("age");
+        let num = parseInt(s1.value);
+        if (num < 18) {
+            alert("YOU ARE UNDERAGE,ID COULD NOT BE CREATED");
+            location.reload();
+            return 0;
+        }
+        else { return 1; }
+    }
+    function check1(n) {
+        var s = "";
+        s = s.concat(n);
+        if (s.length > 10 || s.length < 10) {
+            alert("PLEASE ENTER NUMBER LENGTH OF 10");
+            location.reload();
+            return 0;
+        }
+        else { return 1 };
+
+    }
+    function register(check1, check2, check3) {
+        const fname = document.getElementById("fname").value;
+        const lname = document.getElementById("lname").value;
+        const age = document.getElementById("age").value;
+        var c1 = check2();
+        const contact = document.getElementById("number").value;
+        var c2 = check1(contact);
+        const mail = document.getElementById("mail").value;
+        const pass1=document.getElementById("pass").value;
+        var c3=check3();
+        var detail =
+        {
+            "Fname": fname,
+            "Lname": lname,
+            "Cage": age,
+            "contact": contact,
+            "mail": mail,
+            "password":pass1
+        };
+
+        if (c1 == 1 && c2 == 1 && c3==1) {
+            arr.push(detail,);
+            for (let i = 0; i < arr.length; i++) {
+                console.log(Object.values(arr[i]));
+            }
+
+            alert("THANKYOU FOR REGISTERING,TAKING YOU TO LOGIN PAGE");
+            window.location.replace("file:///C:/Users/tarun.bisht/Desktop/vs/LOGIN/login.html");
+            return true;
+            print();
+        }
+        else {
+            location.reload();
+            return false;
+            
+        }
+    }
+
+    function take() {
+        window.location.href = "file:///C:/Users/tarun.bisht/Desktop/vs/LOGIN/login.html";
+    }
+
+
+</script>
+
+</html>
