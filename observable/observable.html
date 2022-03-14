@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <script src="https://npmcdn.com/@reactivex/rxjs@5.0.0-rc.1/dist/global/Rx.js"></script>
+        <script>
+            
+            const obs = new Rx.Observable((subscriber) => 
+            {
+                subscriber.next(20);
+                subscriber.next(30);
+                subscriber.next(40);
+            });
+        
+        obs.subscribe((data)=>{
+        console.log(data);    
+        })
+        
+        </script>
+    </body>
+</html>
