@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <center>
+        <lable>ENTER AGE </lable>
+        <input type="text" id="age" name="age"></td>
+       
+        </center>
+        <input type="button" id="b1" onclick="check()" value="CHECK">
+        <script>
+             function check()
+            { 
+                
+                let aged=document.getElementById("age").value;
+                let promise=new Promise((resolve,reject)=>{
+                if(age<18)
+                {
+                    reject(new Error("UNDER AGE"));
+                }
+                else
+                {
+                    resolve("GOOD TO GO");
+                }
+            });
+            promise.then(message=>{
+                alert(message);
+                console.log(message);
+                location.reload();
+            })
+                promise.catch(message=>{
+                    alert(message);
+                    console.log(message);
+                    location.reload();
+                })
+            }
+            
+        </script>
+    </body>
+</html>
