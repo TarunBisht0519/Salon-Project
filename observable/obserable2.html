@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <script src="https://npmcdn.com/@reactivex/rxjs@5.0.0-rc.1/dist/global/Rx.js"></script>
+    <script>
+        var arr=new Array(1,2,3,4,5,6,7,8,9,10);
+        const obser = new Rx.Observable((observer) => {
+            for( i of arr)
+            {
+                observer.next(i);
+            }
+
+        });
+        obser.subscribe({
+            next(i) { console.log('subscribed value: ' + i); },
+            error(error) { console.error('There is something error in the code: ' + error); },
+            complete() { console.log('values subscribed'); }
+        });
+        
+    </script>
+</body>
+
+</html>
