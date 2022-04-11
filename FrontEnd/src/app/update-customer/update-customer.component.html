@@ -1,0 +1,45 @@
+
+<div id="body">
+<h1 class = "center">UPDATE CUSTOMER</h1>
+<div>
+    <form id="f1"(ngSubmit) ="onSubmit()">
+        <div class="form-group">
+            <label>ENTER FIRST NAME</label>
+            <input type="text" class = "form-control" id = "firstName"
+            [(ngModel)] = "customer.fname" name = "firstName">
+        </div>
+        <div class="form-group">
+            <label>ENTER LAST NAME</label>
+            <input type="text" class = "form-control" id = "lastName"
+            [(ngModel)] = "customer.lname" name = "lastName">
+        </div>
+        <div class="form-group">
+            <label>ENTER GENDER(M or F or O)</label>
+            <input type="text" class = "form-control" id = "sex"
+            [(ngModel)] = "customer.gender" name = "sex">
+        </div>
+        <div class="form-group">
+            <label>ENTER CITY</label>
+            <input type="text" class = "form-control" id = "residence"
+            [(ngModel)] = "customer.city" name = "residence">
+        </div>
+        <div class="form-group">
+            <label>OPTED PACKAGE </label>
+            <input type="text" class = "form-control" id = "pack"
+            [(ngModel)] = "customer.packages" name = "pack">
+        </div>
+        <div class="form-group">
+            <label>ENTER CONTACT </label>
+            <input type="text" class = "form-control" id = "num"
+            [(ngModel)] = "customer.contact" name = "num">
+        </div>
+        <div class="form-group">
+            <label>ENTER MAIL </label>
+            <input type="text" class = "form-control" id = "email"
+            [(ngModel)] = "customer.mail" name = "email">
+        </div>
+        <button class="btn btn-success" type="submit">UPDATE</button>
+</form>
+
+</div>
+</div>

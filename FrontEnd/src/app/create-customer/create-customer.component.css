@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+}
+#a11
+{
+    text-align:center;
+    color: red;
+}
+#l1 {
+    background-color: azure;
+}
+#f1 {
+
+    width:auto;
+    background-color: aliceblue;
+    margin-top: auto;
+    margin: auto;
+    width: 50%;
+    padding: auto;   
+}
+#for1
+{
+    margin: 1px solid black;
+    border:1px solid aliceblue;
+}
+
+#body
+{
+    background-color: aliceblue;
+    background-size:contain;
+    background-position: 100% 0;
+    background-size:60%;
+}
+label
+{
+    display: inline-block;
+        text-align: right;
+}

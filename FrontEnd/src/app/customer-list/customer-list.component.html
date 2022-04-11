@@ -1,0 +1,34 @@
+<h3>LIST OF ALL THE ENTRIES ARE GIVEN BELOW</h3>
+<P>ALL THE RECORDS OF ENTRIES DONE TILL NOW ARE GIVEN BELOW.</P>
+<table id="customers">
+    <tr>
+        <th><b> FIRST NAME </b></th>
+        <th><b> LAST NAME </b></th>
+        <th><b> GENDER </b></th>
+        <th><b> CITY </b></th>
+        <th><b> PACKAGE OPTED </b></th>
+        <th><b> TOTAL COST </b></th>
+        <th><b>CONTACT</b></th>
+        <th><b>MAIL</b></th>
+        <th><b>ACTIONS</b></th>
+    </tr>
+    <tr *ngFor="let visit of customers">
+        <td>{{visit.fname}}</td>
+        <td>{{visit.lname}}</td>
+        <td>{{visit.gender}}</td>
+        <td>{{visit.city}}</td>
+        <td>{{visit.packages}}</td>
+        <td>{{visit.price}}</td>
+        <td>{{visit.contact}}</td>
+        <td>{{visit.mail}}</td>
+        <td>
+            <div id="outer">
+                <div class="inner"><button (click)= "updateCustomer(visit.fname,visit.lname)" class="btn btn-info">UPDATE</button></div>
+                <div class="inner"><button (click)= "deletecustomer(visit.fname,visit.lname)" class="btn btn-info">DELETE</button></div>
+            </div>
+        </td>
+      
+            
+  
+    </tr>
+</table>
